@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CS275-Final-Project
 //
-//  Created by Rachel Liston on 10/13/21.
+//  Created by Rachel Liston and Sam Pitonyak on 10/13/21.
 //
 
 import UIKit
