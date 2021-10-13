@@ -1,6 +1,7 @@
 //
 //  AppDelegate.swift
 //  CS275-Final-Project
+//  Bar Wait Time App
 //
 //  Created by Rachel Liston and Sam Pitonyak on 10/13/21.
 //
