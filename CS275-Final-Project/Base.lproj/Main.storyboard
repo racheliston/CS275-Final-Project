@@ -193,6 +193,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="-">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="48"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="decrementCap:" destination="38l-2F-r8D" eventType="touchUpInside" id="aUW-CB-FSt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbI-DQ-ogf">
                                 <rect key="frame" x="212" y="286" width="192" height="72"/>
@@ -200,6 +203,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="+">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="48"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="incrementCap:" destination="38l-2F-r8D" eventType="touchUpInside" id="Gbd-lj-aPl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SpJ-t1-98Y"/>
@@ -228,7 +234,11 @@
                     <navigationItem key="navigationItem" id="IBs-Fc-gJJ"/>
                     <connections>
                         <outlet property="capacityLabel" destination="0rC-WP-jV0" id="D7Y-1M-yeK"/>
+                        <outlet property="capacityMinusButton" destination="ehh-VH-ypK" id="kSd-pH-owq"/>
+                        <outlet property="capacityPlusButton" destination="WbI-DQ-ogf" id="E6P-Lt-RLg"/>
                         <outlet property="lineLabel" destination="ZhP-SF-l0u" id="uv9-F8-m6R"/>
+                        <outlet property="lineMinusButton" destination="zW3-Na-u0a" id="ppQ-VT-y2B"/>
+                        <outlet property="linePlusButton" destination="5Tc-JJ-rkA" id="5Lb-qz-6Wm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="561-jw-KTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
