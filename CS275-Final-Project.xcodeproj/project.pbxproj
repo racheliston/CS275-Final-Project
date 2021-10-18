@@ -17,6 +17,7 @@
 		B86295232717758B00EA8906 /* CS275_Final_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295222717758B00EA8906 /* CS275_Final_ProjectUITests.swift */; };
 		B86295252717758B00EA8906 /* CS275_Final_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295242717758B00EA8906 /* CS275_Final_ProjectUITestsLaunchTests.swift */; };
 		D81863C0271E017E00044769 /* ManagerSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81863BF271E017E00044769 /* ManagerSignIn.swift */; };
+		D8C34C31271E05D6002D9B13 /* ManagerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C34C30271E05D6002D9B13 /* ManagerHome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B86295222717758B00EA8906 /* CS275_Final_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS275_Final_ProjectUITests.swift; sourceTree = "<group>"; };
 		B86295242717758B00EA8906 /* CS275_Final_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS275_Final_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D81863BF271E017E00044769 /* ManagerSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSignIn.swift; sourceTree = "<group>"; };
+		D8C34C30271E05D6002D9B13 /* ManagerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerHome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				B86295032717758A00EA8906 /* SceneDelegate.swift */,
 				B86295052717758A00EA8906 /* ViewController.swift */,
 				B86295072717758A00EA8906 /* Main.storyboard */,
+				D8C34C30271E05D6002D9B13 /* ManagerHome.swift */,
 				D81863BF271E017E00044769 /* ManagerSignIn.swift */,
 				B862950A2717758B00EA8906 /* Assets.xcassets */,
 				B862950C2717758B00EA8906 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 				D81863C0271E017E00044769 /* ManagerSignIn.swift in Sources */,
 				B86295022717758A00EA8906 /* AppDelegate.swift in Sources */,
 				B86295042717758A00EA8906 /* SceneDelegate.swift in Sources */,
+				D8C34C31271E05D6002D9B13 /* ManagerHome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
