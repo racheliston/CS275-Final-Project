@@ -16,6 +16,7 @@
 		B86295192717758B00EA8906 /* CS275_Final_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295182717758B00EA8906 /* CS275_Final_ProjectTests.swift */; };
 		B86295232717758B00EA8906 /* CS275_Final_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295222717758B00EA8906 /* CS275_Final_ProjectUITests.swift */; };
 		B86295252717758B00EA8906 /* CS275_Final_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295242717758B00EA8906 /* CS275_Final_ProjectUITestsLaunchTests.swift */; };
+		B8E9E5FF271E05FD00AB3B32 /* PatronMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E5FE271E05FD00AB3B32 /* PatronMap.swift */; };
 		D81863C0271E017E00044769 /* ManagerSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81863BF271E017E00044769 /* ManagerSignIn.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		B862951E2717758B00EA8906 /* CS275-Final-ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CS275-Final-ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86295222717758B00EA8906 /* CS275_Final_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS275_Final_ProjectUITests.swift; sourceTree = "<group>"; };
 		B86295242717758B00EA8906 /* CS275_Final_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS275_Final_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8E9E5FE271E05FD00AB3B32 /* PatronMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatronMap.swift; sourceTree = "<group>"; };
 		D81863BF271E017E00044769 /* ManagerSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSignIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				B862950A2717758B00EA8906 /* Assets.xcassets */,
 				B862950C2717758B00EA8906 /* LaunchScreen.storyboard */,
 				B862950F2717758B00EA8906 /* Info.plist */,
+				B8E9E5FE271E05FD00AB3B32 /* PatronMap.swift */,
 			);
 			path = "CS275-Final-Project";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				B86295062717758A00EA8906 /* ViewController.swift in Sources */,
 				D81863C0271E017E00044769 /* ManagerSignIn.swift in Sources */,
+				B8E9E5FF271E05FD00AB3B32 /* PatronMap.swift in Sources */,
 				B86295022717758A00EA8906 /* AppDelegate.swift in Sources */,
 				B86295042717758A00EA8906 /* SceneDelegate.swift in Sources */,
 			);
