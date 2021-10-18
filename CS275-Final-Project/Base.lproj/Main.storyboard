@@ -308,6 +308,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Out">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="48"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signOut:" destination="EhU-BB-87V" eventType="touchUpInside" id="j8d-Ea-WYt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -322,6 +325,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ze9-yf-29w"/>
+                    <connections>
+                        <outlet property="signOutButton" destination="Czd-ZZ-xcU" id="Dfq-x7-28g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvS-Zz-0Fj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,6 +338,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IeK-bc-jzt" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Zsf-8F-7bB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WMm-0A-KDK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
