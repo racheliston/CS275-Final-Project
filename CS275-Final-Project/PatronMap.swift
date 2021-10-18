@@ -62,16 +62,27 @@ class PatronMapViewController: UIViewController {
     break }
     }
 
+    // Set location to be on Church Street in Burlington, Vermont
+    let homeLocation = CLLocation(latitude: 44.477690, longitude: -73.212450)
+    let regionRadius: CLLocationDistance = 200
+    func centerMapOnLocation(location: CLLocation)
+    {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                  latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Zoom to location on map
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
         
         mapView.showsUserLocation = true
+        centerMapOnLocation(location: homeLocation)
         
         print("PatronMapViewController loaded its view.")
     }
