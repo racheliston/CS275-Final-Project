@@ -38,8 +38,17 @@ class ManagerHomeViewController: UIViewController {
     
     // Increment capacity value if addition symbol is pressed
     @IBAction func incrementCap(_ sender: UIButton) {
-        // Increment the value
-        capacityValue += 1
+        // Make sure capacity value is less than total capacity value
+        if capacityValue < totalCapacityValue {
+            // Increment the value
+            capacityValue += 1
+            
+            if lineValue > 0 {
+                lineValue -= 1
+                lineLabel.text = String(lineValue)
+            }
+        }
+        
         
         capacityLabel.text = String(capacityValue) + " / \(totalCapacityValue)"
     }
@@ -50,8 +59,23 @@ class ManagerHomeViewController: UIViewController {
             // Decrement the value
             capacityValue -= 1
         }
-                
         
         capacityLabel.text = String(capacityValue) + " / \(totalCapacityValue)"
+    }
+    
+    @IBAction func incrementLine(_ sender: UIButton) {
+        // Increment the value
+        lineValue += 1
+        
+        lineLabel.text = String(lineValue)
+    }
+    
+    @IBAction func decrementLine(_ sender: UIButton) {
+        // Make sure line value is greater than
+        if lineValue > 0 {
+            lineValue -= 1
+        }
+        
+        lineLabel.text = String(lineValue)
     }
 }
