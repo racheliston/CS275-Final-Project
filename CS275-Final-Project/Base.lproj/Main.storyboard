@@ -69,10 +69,6 @@
         <scene sceneID="GzG-S8-Zqw">
             <objects>
                 <viewController id="nwk-gS-dJE" customClass="PatronMapViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="NFD-0V-ue8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
                     <navigationItem key="navigationItem" id="d6b-vb-8IQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xev-nn-26c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
