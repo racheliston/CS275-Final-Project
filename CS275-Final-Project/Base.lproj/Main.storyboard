@@ -68,16 +68,14 @@
         <!--Patron Map View Controller-->
         <scene sceneID="x8G-XO-Mk7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D36-8s-TTP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="rzg-dH-iuT" customClass="PatronMapViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3AF-Ks-bTZ">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="gXA-YD-8Jn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="L2G-qY-Zno"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
                     <navigationItem key="navigationItem" id="xmf-8l-Y3e"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D36-8s-TTP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="893" y="97"/>
         </scene>
