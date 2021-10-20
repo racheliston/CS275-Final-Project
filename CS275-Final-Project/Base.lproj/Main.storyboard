@@ -42,7 +42,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="patronView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QFb-xa-z2y"/>
-                                    <segue destination="nwk-gS-dJE" kind="show" id="LVQ-rS-ddE"/>
+                                    <segue destination="7qD-dE-dhS" kind="show" id="yBc-tJ-Idq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,15 +67,15 @@
             </objects>
             <point key="canvasLocation" x="926.08695652173924" y="97.010869565217405"/>
         </scene>
-        <!--Patron Map View Controller-->
-        <scene sceneID="GzG-S8-Zqw">
+        <!--Map View Controller-->
+        <scene sceneID="uBo-p6-16T">
             <objects>
-                <viewController id="nwk-gS-dJE" customClass="PatronMapViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="d6b-vb-8IQ"/>
+                <viewController title="Map View Controller" id="7qD-dE-dhS" customClass="PatronMapViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="h7R-pr-okb"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xev-nn-26c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFX-PN-ZeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878.2608695652175" y="96.195652173913047"/>
+            <point key="canvasLocation" x="1876.8115942028987" y="95.380434782608702"/>
         </scene>
         <!--Manager Sign In View Controller-->
         <scene sceneID="SW0-1v-f4J">

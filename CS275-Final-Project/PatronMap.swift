@@ -64,7 +64,15 @@ class PatronMapViewController: UIViewController {
 
     // Set location to be on Church Street in Burlington, Vermont
     let homeLocation = CLLocation(latitude: 44.477690, longitude: -73.212450)
-    let RJLocation = CLLocationCoordinate2D(latitude: 44.475790, longitude: -73.212870)
+    
+    func showBarLocations() {
+        let RJLocation = CLLocationCoordinate2D(latitude: 44.475790, longitude: -73.212870)
+        // Add bars to map
+        let rubenJames = MKPointAnnotation()
+        rubenJames.coordinate = RJLocation
+        rubenJames.title = "RJ's"
+        mapView.addAnnotation(rubenJames)
+    }
 
     let regionRadius: CLLocationDistance = 200
     func centerMapOnLocation(location: CLLocation)
@@ -73,8 +81,6 @@ class PatronMapViewController: UIViewController {
                                                   latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,15 +91,10 @@ class PatronMapViewController: UIViewController {
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
         
-        // Add bars to map
-        let rubenJames = MKPointAnnotation()
-        rubenJames.coordinate = RJLocation
-        rubenJames.title = "RJ's"
-        mapView.addAnnotation(rubenJames)
-        
+        showBarLocations()
         mapView.showsUserLocation = true
         centerMapOnLocation(location: homeLocation)
-        
+
         print("PatronMapViewController loaded its view.")
     }
     
