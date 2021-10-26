@@ -72,6 +72,9 @@
             <objects>
                 <viewController id="U1w-mo-exH" customClass="PatronMapViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="IWQ-qL-BXV"/>
+                    <connections>
+                        <segue destination="goK-sK-Aru" kind="show" id="dgc-iF-tX5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yg-3s-6QN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -327,6 +330,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97d-Ic-k9q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13" y="97"/>
+        </scene>
+        <!--Ruben James Info-->
+        <scene sceneID="i5k-So-nvt">
+            <objects>
+                <viewController id="goK-sK-Aru" customClass="RubenJamesInfo" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2fY-uz-pYj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fk3-07-tSm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bas-aw-fUu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mto-AK-PyM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2719" y="-236"/>
         </scene>
     </scenes>
     <resources>

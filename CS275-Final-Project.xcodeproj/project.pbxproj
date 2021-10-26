@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B853E0682728526A00058EF8 /* RubenJamesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B853E0672728526A00058EF8 /* RubenJamesInfo.swift */; };
 		B86295022717758A00EA8906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295012717758A00EA8906 /* AppDelegate.swift */; };
 		B86295042717758A00EA8906 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295032717758A00EA8906 /* SceneDelegate.swift */; };
 		B86295062717758A00EA8906 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295052717758A00EA8906 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B853E0672728526A00058EF8 /* RubenJamesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubenJamesInfo.swift; sourceTree = "<group>"; };
 		B86294FE2717758A00EA8906 /* CS275-Final-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS275-Final-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86295012717758A00EA8906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B86295032717758A00EA8906 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				B86295032717758A00EA8906 /* SceneDelegate.swift */,
 				B86295052717758A00EA8906 /* ViewController.swift */,
 				B86295072717758A00EA8906 /* Main.storyboard */,
+				B853E0672728526A00058EF8 /* RubenJamesInfo.swift */,
 				D8C34C32271E2361002D9B13 /* ManagerSettings.swift */,
 				D8C34C30271E05D6002D9B13 /* ManagerHome.swift */,
 				D81863BF271E017E00044769 /* ManagerSignIn.swift */,
@@ -277,6 +280,7 @@
 				B86295022717758A00EA8906 /* AppDelegate.swift in Sources */,
 				B86295042717758A00EA8906 /* SceneDelegate.swift in Sources */,
 				D8C34C31271E05D6002D9B13 /* ManagerHome.swift in Sources */,
+				B853E0682728526A00058EF8 /* RubenJamesInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

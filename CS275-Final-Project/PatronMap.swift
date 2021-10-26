@@ -77,6 +77,8 @@ class PatronMapViewController: UIViewController {
         mapView.addAnnotation(rubenJames)
     }
     
+    // Citation: https://stackoverflow.com/questions/33978455/how-do-i-make-a-pin-annotation-callout-in-swift
+
     class CustomAnnotationView: MKPinAnnotationView {  // or nowadays, you might use MKMarkerAnnotationView
         override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
             super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -89,6 +91,17 @@ class PatronMapViewController: UIViewController {
             super.init(coder: aDecoder)
         }
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "SegueToSecondViewController", sender: view)
+    }
+    
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? RubenJamesInfo,
+            let annotationView = sender as? MKPinAnnotationView {
+            destination.annotation = annotationView.annotation as? MKPointAnnotation
+        }
+    }*/
 
     let regionRadius: CLLocationDistance = 200
     func centerMapOnLocation(location: CLLocation)
