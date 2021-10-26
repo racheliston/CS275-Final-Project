@@ -12,6 +12,8 @@ import CoreLocation
 class PatronMapViewController: UIViewController {
     
     var mapView: MKMapView!
+    
+    //var mapView: MKMapView()
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
     
     override func loadView() {
@@ -67,11 +69,25 @@ class PatronMapViewController: UIViewController {
     
     func showBarLocations() {
         let RJLocation = CLLocationCoordinate2D(latitude: 44.475790, longitude: -73.212870)
+        
         // Add bars to map
         let rubenJames = MKPointAnnotation()
         rubenJames.coordinate = RJLocation
         rubenJames.title = "RJ's"
         mapView.addAnnotation(rubenJames)
+    }
+    
+    class CustomAnnotationView: MKPinAnnotationView {  // or nowadays, you might use MKMarkerAnnotationView
+        override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
+            super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+
+            canShowCallout = true
+            rightCalloutAccessoryView = UIButton(type: .infoLight)
+        }
+
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+        }
     }
 
     let regionRadius: CLLocationDistance = 200
@@ -93,6 +109,7 @@ class PatronMapViewController: UIViewController {
         
         showBarLocations()
         mapView.showsUserLocation = true
+        mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         centerMapOnLocation(location: homeLocation)
 
         print("PatronMapViewController loaded its view.")
