@@ -12,6 +12,8 @@ import CoreLocation
 class PatronMapViewController: UIViewController {
     
     var mapView: MKMapView!
+    
+    //var mapView: MKMapView()
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
     
     override func loadView() {
