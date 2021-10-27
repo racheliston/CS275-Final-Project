@@ -93,7 +93,7 @@ class PatronMapViewController: UIViewController {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        performSegue(withIdentifier: "SegueToSecondViewController", sender: view)
+        performSegue(withIdentifier: "Ruben James Info", sender: view)
     }
     
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
