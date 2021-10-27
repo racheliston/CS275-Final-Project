@@ -396,6 +396,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5VX-z0-Ywg"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Nz-jF-yfQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                     </tabBar>
