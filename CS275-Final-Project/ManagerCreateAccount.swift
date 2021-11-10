@@ -93,6 +93,9 @@ class ManagerCreateAccountViewController: UIViewController {
                                 print("Error writing the document: \(err)")
                             } else {
                                 print("Document successfully written!")
+                                // The account has been created, go to the account settings page
+                                let managerInfo = self.storyboard?.instantiateViewController(withIdentifier: "ManagerInformationViewController") as! ManagerInformationViewController
+                                self.navigationController?.pushViewController(managerInfo, animated: true)
                             }
                         }
                     }

@@ -185,6 +185,11 @@
                                     <action selector="createAccount:" destination="B6F-k0-pJG" eventType="touchUpInside" id="f3D-Eh-Drx"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FMK-Za-Je4">
+                                <rect key="frame" x="60" y="232" width="200" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JJg-Qt-Hg4">
                                 <rect key="frame" x="60" y="321" width="200" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -207,17 +212,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTG-Wq-eLC">
-                                <rect key="frame" x="60" y="247" width="79" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTG-Wq-eLC">
+                                <rect key="frame" x="60" y="203" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FMK-Za-Je4">
-                                <rect key="frame" x="60" y="232" width="200" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MpP-Jc-ZrT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -225,18 +225,21 @@
                             <constraint firstItem="lsP-NN-MJS" firstAttribute="leading" secondItem="MpP-Jc-ZrT" secondAttribute="leading" constant="60" id="24V-Yj-Is5"/>
                             <constraint firstItem="uaU-Ra-Cz0" firstAttribute="leading" secondItem="MpP-Jc-ZrT" secondAttribute="leading" constant="60" id="3QJ-fF-Doe"/>
                             <constraint firstItem="lsP-NN-MJS" firstAttribute="top" secondItem="LcC-JF-haB" secondAttribute="bottom" constant="45" id="3s6-sc-x6h"/>
+                            <constraint firstItem="MpP-Jc-ZrT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tbW-AD-zv5" secondAttribute="trailing" symbolic="YES" id="8U2-7B-L2B"/>
                             <constraint firstItem="JJg-Qt-Hg4" firstAttribute="leading" secondItem="MpP-Jc-ZrT" secondAttribute="leading" constant="60" id="Cv6-XG-hhY"/>
                             <constraint firstItem="FMK-Za-Je4" firstAttribute="leading" secondItem="MpP-Jc-ZrT" secondAttribute="leading" constant="60" id="Jhw-ls-HeJ"/>
                             <constraint firstItem="LcC-JF-haB" firstAttribute="leading" secondItem="MpP-Jc-ZrT" secondAttribute="leading" constant="60" id="Jo6-gN-cbq"/>
                             <constraint firstItem="lsP-NN-MJS" firstAttribute="centerX" secondItem="dz3-MC-0G7" secondAttribute="centerX" id="M6y-Oc-KdM"/>
                             <constraint firstItem="JJg-Qt-Hg4" firstAttribute="top" secondItem="uaU-Ra-Cz0" secondAttribute="bottom" constant="8" id="PI4-Ns-k7l"/>
                             <constraint firstItem="FMK-Za-Je4" firstAttribute="top" secondItem="vTG-Wq-eLC" secondAttribute="bottom" constant="8" id="Q5j-vX-jhM"/>
+                            <constraint firstItem="MpP-Jc-ZrT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uaU-Ra-Cz0" secondAttribute="trailing" symbolic="YES" id="QGO-5w-m3U"/>
                             <constraint firstItem="tbW-AD-zv5" firstAttribute="leading" secondItem="MpP-Jc-ZrT" secondAttribute="leading" constant="60" id="V4x-Ya-SxO"/>
                             <constraint firstItem="tbW-AD-zv5" firstAttribute="top" secondItem="JJg-Qt-Hg4" secondAttribute="bottom" constant="26" id="Z4q-st-cJH"/>
                             <constraint firstItem="vTG-Wq-eLC" firstAttribute="leading" secondItem="MpP-Jc-ZrT" secondAttribute="leading" constant="60" id="ZWN-iO-Yow"/>
                             <constraint firstAttribute="bottom" secondItem="tbW-AD-zv5" secondAttribute="bottom" constant="334" id="ZoX-bo-GRN"/>
                             <constraint firstItem="LcC-JF-haB" firstAttribute="top" secondItem="tbW-AD-zv5" secondAttribute="bottom" constant="8" id="a2v-ix-XyE"/>
                             <constraint firstItem="vTG-Wq-eLC" firstAttribute="top" secondItem="MpP-Jc-ZrT" secondAttribute="top" constant="203" id="d2J-AN-pPA"/>
+                            <constraint firstItem="MpP-Jc-ZrT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vTG-Wq-eLC" secondAttribute="trailing" symbolic="YES" id="qxJ-T5-pgp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nN2-TL-9pG"/>
@@ -250,6 +253,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83m-u0-9rr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="924.63768115942037" y="1612.5000000000002"/>
+        </scene>
+        <!--Manager Information View Controller-->
+        <scene sceneID="RcE-gx-RnG">
+            <objects>
+                <viewController id="6am-me-qH8" customClass="ManagerInformationViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A5C-N2-BYi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QMe-ts-vJi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZH-tz-84Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877" y="1613"/>
         </scene>
         <!--Manager Home View Controller-->
         <scene sceneID="gRX-rI-qsU">
