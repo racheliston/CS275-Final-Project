@@ -20,6 +20,12 @@ class ManagerCreateAccountViewController: UIViewController {
     
     var database: Firestore!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        database = Firestore.firestore()
+    }
+    
     
     @IBAction func createAccount(_ sender: Any) {
         
@@ -71,7 +77,7 @@ class ManagerCreateAccountViewController: UIViewController {
             
             alertPasswordsDifferent.addAction(okAction)
             // All the fields are filled, make sure the username is not in the database
-            let docRef = database.document("\(user)")
+            let docRef = database.collection("managers").document("\(user)")
             
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
