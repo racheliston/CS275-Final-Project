@@ -38,19 +38,19 @@ class ManagerCreateAccountViewController: UIViewController {
         alertTextFieldsEmpty.addAction(okAction)
     
         // Make sure the text fields are not empty when pressed
-        if let u = userName.text {
+        if let u = userName.text, u != "" {
             user = u
         } else {
             empty = true
         }
         
-        if let p = origPass.text {
+        if let p = origPass.text, p != "" {
             password = p
         } else {
             empty = true
         }
         
-        if let cP = confPass.text {
+        if let cP = confPass.text, cP != "" {
             confirmPassword = cP
         } else {
             empty = true
