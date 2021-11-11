@@ -110,8 +110,8 @@ class ManagerCreateAccountViewController: UIViewController {
                             } else {
                                 print("Document successfully written!")
                                 // The account has been created, go to the account settings page
-                                //let managerInfo = self.storyboard?.instantiateViewController(withIdentifier: "ManagerInformationViewController") as! ManagerInformationViewController
-                                //self.navigationController?.pushViewController(managerInfo, animated: true)
+                                let managerInfo = self.storyboard?.instantiateViewController(withIdentifier: "ManagerInformationViewController") as! ManagerInformationViewController
+                                self.navigationController?.pushViewController(managerInfo, animated: true)
                             }
                         }
                     }

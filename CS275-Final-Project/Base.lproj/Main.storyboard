@@ -263,17 +263,29 @@
         <!--Manager Information View Controller-->
         <scene sceneID="RcE-gx-RnG">
             <objects>
-                <viewController id="6am-me-qH8" customClass="ManagerInformationViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManagerInformationViewController" id="6am-me-qH8" customClass="ManagerInformationViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A5C-N2-BYi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial Manager Information Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilc-A4-hkC">
+                                <rect key="frame" x="65" y="323" width="245" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QMe-ts-vJi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ilc-A4-hkC" firstAttribute="centerX" secondItem="A5C-N2-BYi" secondAttribute="centerX" id="2Hi-FF-GHB"/>
+                            <constraint firstItem="ilc-A4-hkC" firstAttribute="centerY" secondItem="A5C-N2-BYi" secondAttribute="centerY" id="wpF-gU-RLK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZH-tz-84Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="1613"/>
+            <point key="canvasLocation" x="1876" y="1612.4437781109445"/>
         </scene>
         <!--Manager Home View Controller-->
         <scene sceneID="gRX-rI-qsU">

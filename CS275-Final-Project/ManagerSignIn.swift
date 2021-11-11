@@ -6,7 +6,18 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
 
 class ManagerSignInViewController: UIViewController {
+    
+    var database: Firestore!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        database = Firestore.firestore()
+    }
+    
     
 }
