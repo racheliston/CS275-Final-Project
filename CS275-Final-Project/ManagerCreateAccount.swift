@@ -76,15 +76,25 @@ class ManagerCreateAccountViewController: UIViewController {
                                                             preferredStyle: .alert)
             
             alertPasswordsDifferent.addAction(okAction)
+            // Add a new document in collection "cities"
+//            database.collection("managers").document("\(user)").setData([
+//                "password": "\(password)"
+//            ]) { err in
+//                if let err = err {
+//                    print("Error writing document: \(err)")
+//                } else {
+//                    print("Document successfully written!")
+//                }
+//            }
             // All the fields are filled, make sure the username is not in the database
             let docRef = database.collection("managers").document("\(user)")
-            
+
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
                     // The username exists, present the alert controller
                     print("Username is already in the database")
                     self.present(alertUsernameMade, animated: true, completion: nil)
-                    
+
                 } else {
                     // The username does not exist, create the data
                     // Check that the passwords match
@@ -92,7 +102,7 @@ class ManagerCreateAccountViewController: UIViewController {
                         self.present(alertPasswordsDifferent, animated: true, completion: nil)
                     } else {
                         // Everything matches, add a new document
-                        self.database.document("\(user)").setData([
+                        docRef.setData([
                             "password": "\(password)"
                         ]) { err in
                             if let err = err {
@@ -100,12 +110,12 @@ class ManagerCreateAccountViewController: UIViewController {
                             } else {
                                 print("Document successfully written!")
                                 // The account has been created, go to the account settings page
-                                let managerInfo = self.storyboard?.instantiateViewController(withIdentifier: "ManagerInformationViewController") as! ManagerInformationViewController
-                                self.navigationController?.pushViewController(managerInfo, animated: true)
+                                //let managerInfo = self.storyboard?.instantiateViewController(withIdentifier: "ManagerInformationViewController") as! ManagerInformationViewController
+                                //self.navigationController?.pushViewController(managerInfo, animated: true)
                             }
                         }
                     }
-                    
+
                 }
             }
             
