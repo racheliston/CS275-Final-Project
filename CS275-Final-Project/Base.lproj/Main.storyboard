@@ -141,6 +141,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <connections>
+                                    <action selector="checkInformation:" destination="LOk-Od-Bjf" eventType="touchUpInside" id="eQ7-EI-VOG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ql7-eD-akE"/>
@@ -159,6 +162,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4Ps-kR-Ctq"/>
+                    <connections>
+                        <outlet property="passWord" destination="xGz-vC-v2l" id="AQc-F4-v2n"/>
+                        <outlet property="userName" destination="PQ9-G0-pcX" id="Q0P-eg-Ja0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DV0-1p-CZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -290,7 +297,7 @@
         <!--Manager Home View Controller-->
         <scene sceneID="gRX-rI-qsU">
             <objects>
-                <viewController id="38l-2F-r8D" customClass="ManagerHomeViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManagerHomeViewController" id="38l-2F-r8D" customClass="ManagerHomeViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a2z-z5-eXb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

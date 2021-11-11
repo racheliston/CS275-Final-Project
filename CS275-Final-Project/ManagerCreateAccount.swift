@@ -76,7 +76,7 @@ class ManagerCreateAccountViewController: UIViewController {
                                                             preferredStyle: .alert)
             
             alertPasswordsDifferent.addAction(okAction)
-            // Add a new document in collection "cities"
+            // Add a new document in collection "managers"
 //            database.collection("managers").document("\(user)").setData([
 //                "password": "\(password)"
 //            ]) { err in

@@ -11,5 +11,14 @@ import FirebaseFirestore
 
 class ManagerInformationViewController: UIViewController {
     
+    var database: Firestore!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        database = Firestore.firestore()
+    }
+    
+    // Set the information for the user including: total capacity, hours, and address
     
 }
