@@ -12,6 +12,10 @@ import FirebaseFirestore
 
 class ManagerCreateAccountViewController: UIViewController {
     
+    var user = ""
+    var password = ""
+    var confirmPassword = ""
+
     
     
     @IBOutlet var userName: UITextField!
@@ -29,9 +33,6 @@ class ManagerCreateAccountViewController: UIViewController {
     
     @IBAction func createAccount(_ sender: Any) {
         
-        var user = ""
-        var password = ""
-        var confirmPassword = ""
         // Set a boolean that is true if any of the fields are empty
         var empty = false
         
@@ -45,19 +46,19 @@ class ManagerCreateAccountViewController: UIViewController {
     
         // Make sure the text fields are not empty when pressed
         if let u = userName.text, u != "" {
-            user = u
+            self.user = u
         } else {
             empty = true
         }
         
         if let p = origPass.text, p != "" {
-            password = p
+            self.password = p
         } else {
             empty = true
         }
         
         if let cP = confPass.text, cP != "" {
-            confirmPassword = cP
+            self.confirmPassword = cP
         } else {
             empty = true
         }
@@ -87,7 +88,7 @@ class ManagerCreateAccountViewController: UIViewController {
 //                }
 //            }
             // All the fields are filled, make sure the username is not in the database
-            let docRef = database.collection("managers").document("\(user)")
+            let docRef = database.collection("managers").document("\(self.user)")
 
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
@@ -98,19 +99,22 @@ class ManagerCreateAccountViewController: UIViewController {
                 } else {
                     // The username does not exist, create the data
                     // Check that the passwords match
-                    if password != confirmPassword {
+                    if self.password != self.confirmPassword {
                         self.present(alertPasswordsDifferent, animated: true, completion: nil)
                     } else {
                         // Everything matches, add a new document
                         docRef.setData([
-                            "password": "\(password)"
+                            "password": "\(self.password)"
                         ]) { err in
                             if let err = err {
                                 print("Error writing the document: \(err)")
                             } else {
                                 print("Document successfully written!")
                                 // The account has been created, go to the account settings page
+
                                 let managerInfo = self.storyboard?.instantiateViewController(withIdentifier: "ManagerInformationViewController") as! ManagerInformationViewController
+                                
+                                managerInfo.userName = self.user
                                 self.navigationController?.pushViewController(managerInfo, animated: true)
                             }
                         }
