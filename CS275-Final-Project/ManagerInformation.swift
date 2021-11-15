@@ -25,9 +25,6 @@ class ManagerInformationViewController: UIViewController {
         
         database = Firestore.firestore()
         
-
-        
-        
     }
     
     // Set the information for the user including: total capacity, hours, and address
@@ -91,7 +88,12 @@ class ManagerInformationViewController: UIViewController {
             
             print("Data has been written to the database")
             
-            // Move the user to the next database
+            // Move the user to the next view controller
+            let managerHome = self.storyboard?.instantiateViewController(withIdentifier: "ManagerHomeViewController") as! ManagerHomeViewController
+            
+            managerHome.userName = self.userName
+            
+            self.navigationController?.pushViewController(managerHome, animated: true)
             
             
         }

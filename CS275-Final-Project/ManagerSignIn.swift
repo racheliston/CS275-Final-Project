@@ -86,6 +86,8 @@ class ManagerSignInViewController: UIViewController {
                     if found.contains(password) {
                         // The account has been created, go to the account settings page
                         let managerHome = self.storyboard?.instantiateViewController(withIdentifier: "ManagerHomeViewController") as! ManagerHomeViewController
+                        
+                        managerHome.userName = user
                         self.navigationController?.pushViewController(managerHome, animated: true)
                     } else {
                         // If the password is incorrect

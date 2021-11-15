@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
 
 class ManagerHomeViewController: UIViewController {
     
@@ -23,15 +25,54 @@ class ManagerHomeViewController: UIViewController {
     var capacityValue: Int = 0
     var lineValue: Int = 0
     
+    var userName = ""
+    
+    var database : Firestore!
+    
     
     // For start view for capacity and label
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // HARDCODED CAP VALUE
-        totalCapacityValue = 50
+        database = Firestore.firestore()
         
-        capacityLabel.text = "0 / \(totalCapacityValue)"
+        // Call the database to get the information
+        let docRef = database.collection("managers").document("\(userName)")
+
+        var cap = 0
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                
+                let fields = dataDescription.split(separator: ",")
+                
+                print("\(fields)")
+                var found = String()
+                for i in fields {
+                    if i.contains("capacity") {
+                        found = String(i)
+                    }
+                }
+                var capVal = found.split(separator: " ")
+                capVal.dropLast()
+                print("\(capVal[1])")
+                cap = Int(capVal[1]) ?? 100
+                
+                // Get the value of the capacity for the manager
+                self.totalCapacityValue = cap
+                
+                self.capacityLabel.text = "0 / \(self.totalCapacityValue)"
+                print("\(cap)")
+                // Extract the found value
+                //print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
+//        // Get the value of the capacity for the manager
+//        totalCapacityValue = cap
+//
+//        capacityLabel.text = "0 / \(totalCapacityValue)"
         lineLabel.text = "0"
         
     }
