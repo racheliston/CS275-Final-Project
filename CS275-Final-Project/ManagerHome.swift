@@ -34,6 +34,9 @@ class ManagerHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Hide the back button
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
         database = Firestore.firestore()
         
         // Call the database to get the information
