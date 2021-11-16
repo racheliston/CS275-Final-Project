@@ -25,6 +25,9 @@ class ManagerInformationViewController: UIViewController {
         
         database = Firestore.firestore()
         
+        // Hide the back button
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
     }
     
     // Set the information for the user including: total capacity, hours, and address
