@@ -87,8 +87,30 @@ class ManagerHomeViewController: UIViewController {
             // Increment the value
             capacityValue += 1
             
+            // Update the capacity value in the database
+            let docRef = database.collection("managers").document("\(userName)")
+            
+            docRef.updateData([
+                "currentCapacity": "\(capacityValue)"
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
+            
             if lineValue > 0 {
                 lineValue -= 1
+                docRef.updateData([
+                    "currentLine": "\(lineValue)"
+                ]) { err in
+                    if let err = err {
+                        print("Error updating document: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                }
                 lineLabel.text = String(lineValue)
             }
         }
@@ -98,10 +120,21 @@ class ManagerHomeViewController: UIViewController {
     }
     
     @IBAction func decrementCap(_ sender: UIButton) {
+        let docRef = database.collection("managers").document("\(userName)")
         // Make sure capacity is not less than 0
         if capacityValue > 0 {
             // Decrement the value
             capacityValue -= 1
+            
+            docRef.updateData([
+                "currentCapacity": "\(capacityValue)"
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
         }
         
         capacityLabel.text = String(capacityValue) + " / \(totalCapacityValue)"
@@ -110,13 +143,33 @@ class ManagerHomeViewController: UIViewController {
     @IBAction func incrementLine(_ sender: UIButton) {
         // Increment the value
         lineValue += 1
+        let docRef = database.collection("managers").document("\(userName)")
+        docRef.updateData([
+            "currentLine": "\(lineValue)"
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
         
         lineLabel.text = String(lineValue)
     }
     
     @IBAction func decrementLine(_ sender: UIButton) {
+        let docRef = database.collection("managers").document("\(userName)")
         // Make sure line value is greater than
         if lineValue > 0 {
+            docRef.updateData([
+                "currentLine": "\(lineValue)"
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
             lineValue -= 1
         }
         

@@ -18,12 +18,15 @@ class ManagerInformationViewController: UIViewController {
     // Create an instance of ManagerCreateAccount
     var userName = ""
     
-    let geoLoc = CLGeocoder()
+    lazy var geoLoc = CLGeocoder()
+    var longitudeReturned = 0.0
+    var latitudeReturned = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         database = Firestore.firestore()
+        
         
         // Hide the back button
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -33,14 +36,15 @@ class ManagerInformationViewController: UIViewController {
     // Set the information for the user including: total capacity, hours, and address
     @IBOutlet var capacity: UITextField!
     @IBOutlet var hours: UITextField!
-    @IBOutlet var address: UITextField!
+    @IBOutlet var longitude: UITextField!
+    @IBOutlet var latitude: UITextField!
     
     
     @IBAction func submitInformation(_ sender: Any) {
         
         var capValue = 0
         var hoursValue = ""
-        var addressValue = ""
+        var
   
         // Set a boolean that is true if any of the fields are empty
         var empty = false
@@ -66,8 +70,13 @@ class ManagerInformationViewController: UIViewController {
             empty = true
         }
         
-        if let a = address.text, a != "" {
-            addressValue = a
+        if let long = longitude.text, long != "" {
+            longitudeValue = long
+        } else {
+            empty = true
+        }
+        if let lat = latitude.text, lat != "" {
+            latitudeValue = lat
         } else {
             empty = true
         }
@@ -77,17 +86,9 @@ class ManagerInformationViewController: UIViewController {
             present(alertTextFieldsEmpty, animated: true, completion: nil)
         } else {
             
-            var longitude = 0.0
-            var latitude = 0.0
-            geoLoc.geocodeAddressString(addressValue) {
-                placemarks, error in
-                let placemark = placemarks?.first
-                longitude = (placemark?.location?.coordinate.longitude)!
-                latitude = (placemark?.location?.coordinate.latitude)!
-            }
             let userName = self.userName
             // Store the information in the account that was created
-            database.collection("managers").document("\(userName)").setData([ "capacity" : "\(capValue)", "hours" : "\(hoursValue)", "longitude" : "\(longitude)", "latitude" : "\(latitude)"], merge: true)
+            database.collection("managers").document("\(userName)").setData([ "capacity" : "\(capValue)", "hours" : "\(hoursValue)", "longitude" : "\(self.longitudeReturned)", "latitude" : "\(self.latitudeReturned)", "currentCapacity" : "0", "currentLine" : "0"], merge: true)
             
             print("Data has been written to the database")
             
@@ -101,6 +102,30 @@ class ManagerInformationViewController: UIViewController {
             
         }
         
+    }
+    
+    func getCoordinate( addressString : String,
+            completionHandler: @escaping(CLLocationCoordinate2D, NSError?) -> Void) {
+        let geocoder = CLGeocoder()
+
+        geocoder.geocodeAddressString(addressString) { (placemarks, error) in
+            if error == nil {
+                if let placemark = placemarks?[0] {
+                    let location = placemark.location!
+
+                    
+                    self.longitudeReturned = location.coordinate.longitude
+                    self.latitudeReturned = location.coordinate.latitude
+                    
+                    print("Got longitude/latitude values")
+                    completionHandler(location.coordinate, nil)
+
+                    return
+                }
+            }
+
+            completionHandler(kCLLocationCoordinate2DInvalid, error as NSError?)
+        }
     }
     
     
