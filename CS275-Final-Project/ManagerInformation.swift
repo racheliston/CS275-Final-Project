@@ -36,15 +36,25 @@ class ManagerInformationViewController: UIViewController {
     // Set the information for the user including: total capacity, hours, and address
     @IBOutlet var capacity: UITextField!
     @IBOutlet var hours: UITextField!
-    @IBOutlet var longitude: UITextField!
-    @IBOutlet var latitude: UITextField!
+    @IBOutlet var streetAddress: UITextField!
+    @IBOutlet var city: UITextField!
+    @IBOutlet var state: UITextField!
+    @IBOutlet var zipCode: UITextField!
+    @IBOutlet var country: UITextField!
+    
+    
     
     
     @IBAction func submitInformation(_ sender: Any) {
         
         var capValue = 0
         var hoursValue = ""
-        var
+        var addressValue = ""
+        var cityValue = ""
+        var stateValue = ""
+        var zipCodeValue = ""
+        var countryValue = ""
+        
   
         // Set a boolean that is true if any of the fields are empty
         var empty = false
@@ -70,13 +80,28 @@ class ManagerInformationViewController: UIViewController {
             empty = true
         }
         
-        if let long = longitude.text, long != "" {
-            longitudeValue = long
+        if let sA = streetAddress.text, sA != "" {
+            addressValue = sA
         } else {
             empty = true
         }
-        if let lat = latitude.text, lat != "" {
-            latitudeValue = lat
+        if let cT = city.text, cT != "" {
+            cityValue = cT
+        } else {
+            empty = true
+        }
+        if let sT = state.text, sT != "" {
+            stateValue = sT
+        } else {
+            empty = true
+        }
+        if let zP = zipCode.text, zP != "" {
+            zipCodeValue = zP
+        } else {
+            empty = true
+        }
+        if let cR = country.text, cR != "" {
+            countryValue = cR
         } else {
             empty = true
         }
@@ -85,6 +110,9 @@ class ManagerInformationViewController: UIViewController {
         if empty {
             present(alertTextFieldsEmpty, animated: true, completion: nil)
         } else {
+            var address = "\(addressValue), \(cityValue), \(stateValue), \(zipCodeValue)"
+            
+            getCoordinate(addressString: address, completionHandler: completedValue)
             
             let userName = self.userName
             // Store the information in the account that was created
@@ -126,6 +154,10 @@ class ManagerInformationViewController: UIViewController {
 
             completionHandler(kCLLocationCoordinate2DInvalid, error as NSError?)
         }
+    }
+    
+    func completedValue(coordinates: CLLocationCoordinate2D, error : NSError?) -> Void {
+        print("Completion placeholder")
     }
     
     
