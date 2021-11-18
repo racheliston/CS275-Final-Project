@@ -18,19 +18,31 @@ class ManagerInformationViewController: UIViewController {
     // Create an instance of ManagerCreateAccount
     var userName = ""
     
-    let geoLoc = CLGeocoder()
+    lazy var geoLoc = CLGeocoder()
+    var longitudeReturned = 0.0
+    var latitudeReturned = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         database = Firestore.firestore()
         
+        
+        // Hide the back button
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
     }
     
     // Set the information for the user including: total capacity, hours, and address
     @IBOutlet var capacity: UITextField!
     @IBOutlet var hours: UITextField!
-    @IBOutlet var address: UITextField!
+    @IBOutlet var streetAddress: UITextField!
+    @IBOutlet var city: UITextField!
+    @IBOutlet var state: UITextField!
+    @IBOutlet var zipCode: UITextField!
+    @IBOutlet var country: UITextField!
+    
+    
     
     
     @IBAction func submitInformation(_ sender: Any) {
@@ -38,6 +50,11 @@ class ManagerInformationViewController: UIViewController {
         var capValue = 0
         var hoursValue = ""
         var addressValue = ""
+        var cityValue = ""
+        var stateValue = ""
+        var zipCodeValue = ""
+        var countryValue = ""
+        
   
         // Set a boolean that is true if any of the fields are empty
         var empty = false
@@ -63,8 +80,28 @@ class ManagerInformationViewController: UIViewController {
             empty = true
         }
         
-        if let a = address.text, a != "" {
-            addressValue = a
+        if let sA = streetAddress.text, sA != "" {
+            addressValue = sA
+        } else {
+            empty = true
+        }
+        if let cT = city.text, cT != "" {
+            cityValue = cT
+        } else {
+            empty = true
+        }
+        if let sT = state.text, sT != "" {
+            stateValue = sT
+        } else {
+            empty = true
+        }
+        if let zP = zipCode.text, zP != "" {
+            zipCodeValue = zP
+        } else {
+            empty = true
+        }
+        if let cR = country.text, cR != "" {
+            countryValue = cR
         } else {
             empty = true
         }
@@ -73,18 +110,13 @@ class ManagerInformationViewController: UIViewController {
         if empty {
             present(alertTextFieldsEmpty, animated: true, completion: nil)
         } else {
+            var address = "\(addressValue), \(cityValue), \(stateValue), \(zipCodeValue)"
             
-            var longitude = 0.0
-            var latitude = 0.0
-            geoLoc.geocodeAddressString(addressValue) {
-                placemarks, error in
-                let placemark = placemarks?.first
-                longitude = (placemark?.location?.coordinate.longitude)!
-                latitude = (placemark?.location?.coordinate.latitude)!
-            }
+            getCoordinate(addressString: address, completionHandler: completedValue)
+            
             let userName = self.userName
             // Store the information in the account that was created
-            database.collection("managers").document("\(userName)").setData([ "capacity" : "\(capValue)", "hours" : "\(hoursValue)", "longitude" : "\(longitude)", "latitude" : "\(latitude)"], merge: true)
+            database.collection("managers").document("\(userName)").setData([ "capacity" : "\(capValue)", "hours" : "\(hoursValue)", "longitude" : "\(self.longitudeReturned)", "latitude" : "\(self.latitudeReturned)", "currentCapacity" : "0", "currentLine" : "0"], merge: true)
             
             print("Data has been written to the database")
             
@@ -98,6 +130,34 @@ class ManagerInformationViewController: UIViewController {
             
         }
         
+    }
+    
+    func getCoordinate( addressString : String,
+            completionHandler: @escaping(CLLocationCoordinate2D, NSError?) -> Void) {
+        let geocoder = CLGeocoder()
+
+        geocoder.geocodeAddressString(addressString) { (placemarks, error) in
+            if error == nil {
+                if let placemark = placemarks?[0] {
+                    let location = placemark.location!
+
+                    
+                    self.longitudeReturned = location.coordinate.longitude
+                    self.latitudeReturned = location.coordinate.latitude
+                    
+                    print("Got longitude/latitude values")
+                    completionHandler(location.coordinate, nil)
+
+                    return
+                }
+            }
+
+            completionHandler(kCLLocationCoordinate2DInvalid, error as NSError?)
+        }
+    }
+    
+    func completedValue(coordinates: CLLocationCoordinate2D, error : NSError?) -> Void {
+        print("Completion placeholder")
     }
     
     
