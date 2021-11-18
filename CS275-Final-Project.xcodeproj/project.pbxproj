@@ -10,6 +10,7 @@
 		396A286BA53914D265919502 /* Pods_CS275_Final_Project_CS275_Final_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37ED3620A6598A447DD7A77A /* Pods_CS275_Final_Project_CS275_Final_ProjectUITests.framework */; };
 		6FBCBFEB6EFFA4EEB272C2EE /* Pods_CS275_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207D778619AD40EBBD565A77 /* Pods_CS275_Final_Project.framework */; };
 		B853E0682728526A00058EF8 /* RubenJamesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B853E0672728526A00058EF8 /* RubenJamesInfo.swift */; };
+		B85D8B352746AEC000E2302D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D8B342746AEC000E2302D /* TableViewController.swift */; };
 		B86295022717758A00EA8906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295012717758A00EA8906 /* AppDelegate.swift */; };
 		B86295042717758A00EA8906 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295032717758A00EA8906 /* SceneDelegate.swift */; };
 		B86295062717758A00EA8906 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86295052717758A00EA8906 /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		9C7F4FF24A1B5C3C51439705 /* Pods-CS275-Final-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS275-Final-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-CS275-Final-ProjectTests/Pods-CS275-Final-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		A24EF4FF6F2A25DD53823C49 /* Pods-CS275-Final-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS275-Final-ProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-CS275-Final-ProjectTests/Pods-CS275-Final-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B853E0672728526A00058EF8 /* RubenJamesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubenJamesInfo.swift; sourceTree = "<group>"; };
+		B85D8B342746AEC000E2302D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		B86294FE2717758A00EA8906 /* CS275-Final-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS275-Final-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86295012717758A00EA8906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B86295032717758A00EA8906 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				B86295032717758A00EA8906 /* SceneDelegate.swift */,
 				B86295052717758A00EA8906 /* ViewController.swift */,
 				B86295072717758A00EA8906 /* Main.storyboard */,
+				B85D8B342746AEC000E2302D /* TableViewController.swift */,
 				D8030852273C923C00675C59 /* ManagerInformation.swift */,
 				D8030850273C84CD00675C59 /* ManagerCreateAccount.swift */,
 				B853E0672728526A00058EF8 /* RubenJamesInfo.swift */,
@@ -437,6 +440,7 @@
 				D8C34C33271E2361002D9B13 /* ManagerSettings.swift in Sources */,
 				B8E9E5FF271E05FD00AB3B32 /* PatronMap.swift in Sources */,
 				D8030851273C84CD00675C59 /* ManagerCreateAccount.swift in Sources */,
+				B85D8B352746AEC000E2302D /* TableViewController.swift in Sources */,
 				B86295022717758A00EA8906 /* AppDelegate.swift in Sources */,
 				B86295042717758A00EA8906 /* SceneDelegate.swift in Sources */,
 				D8C34C31271E05D6002D9B13 /* ManagerHome.swift in Sources */,
