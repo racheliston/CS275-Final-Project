@@ -108,9 +108,9 @@ class ManagerInformationViewController: UIViewController {
         if empty {
             present(alertTextFieldsEmpty, animated: true, completion: nil)
         } else {
-            var address = "\(addressValue), \(cityValue), \(stateValue), \(zipCodeValue)"
-            //var address = "1 Infinite Loop, Cupertino, CA"
-            //getCoordinate(addressString: address, completionHandler: completedValue)
+
+            let address = "\(addressValue), \(cityValue), \(stateValue), \(zipCodeValue)"
+            
             // https://stackoverflow.com/questions/47244532/converting-a-city-name-to-coordinates-in-swift
             getCoordinateFrom(address: address) { coordinate, error in
                 guard let coordinate = coordinate, error == nil else { return }
@@ -123,7 +123,6 @@ class ManagerInformationViewController: UIViewController {
                 }
 
             }
-            
             
             let userName = self.userName
             // Store the information in the account that was created
