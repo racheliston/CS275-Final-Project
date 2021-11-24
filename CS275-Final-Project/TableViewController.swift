@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
 
 class TableViewController: UITableViewController {
+    
+    var database: Firestore!
     
     // list of all bars to be included in list
     let barItems = ["Ruben James","Ales","Akes","Red Square"]
@@ -20,6 +24,7 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        database = Firestore.firestore()
     }
 
     // MARK: - Table view data source
