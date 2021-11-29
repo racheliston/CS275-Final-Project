@@ -249,7 +249,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MpP-Jc-ZrT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.9514977603" green="0.97655744860000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="2ld-Kq-ddC" firstAttribute="top" secondItem="MpP-Jc-ZrT" secondAttribute="top" constant="60" id="5fY-Dk-OV1"/>
                             <constraint firstItem="2ld-Kq-ddC" firstAttribute="leading" secondItem="MpP-Jc-ZrT" secondAttribute="leading" constant="30" id="776-4y-B3j"/>
@@ -409,7 +409,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QMe-ts-vJi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.9514977603" green="0.97655744860000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="9kw-uf-Xpc" firstAttribute="top" secondItem="eB8-Tt-kUN" secondAttribute="bottom" constant="30" id="7wY-pO-FQh"/>
                             <constraint firstItem="QMe-ts-vJi" firstAttribute="trailing" secondItem="9kw-uf-Xpc" secondAttribute="trailing" constant="60" id="Dk3-aT-LTW"/>
