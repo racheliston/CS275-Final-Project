@@ -69,12 +69,30 @@ class PatronMapViewController: UIViewController {
     
     func showBarLocations() {
         let RJLocation = CLLocationCoordinate2D(latitude: 44.475790, longitude: -73.212870)
+        let AkesLocation = CLLocationCoordinate2D(latitude: 44.476720, longitude: -73.212390)
+        let RedSquareLocation = CLLocationCoordinate2D(latitude: 44.476560, longitude: -73.212350)
+        let AlesLocation = CLLocationCoordinate2D(latitude: 44.475460, longitude: -73.213820)
         
         // Add bars to map
         let rubenJames = MKPointAnnotation()
         rubenJames.coordinate = RJLocation
         rubenJames.title = "RJ's"
         mapView.addAnnotation(rubenJames)
+        
+        let akes = MKPointAnnotation()
+        akes.coordinate = AkesLocation
+        akes.title = "Akes"
+        mapView.addAnnotation(akes)
+        
+        let redSquare = MKPointAnnotation()
+        redSquare.coordinate = RedSquareLocation
+        redSquare.title = "Red Square"
+        mapView.addAnnotation(redSquare)
+        
+        let ales = MKPointAnnotation()
+        ales.coordinate = AlesLocation
+        ales.title = "Ales"
+        mapView.addAnnotation(ales)
     }
     
     // Citation: https://stackoverflow.com/questions/33978455/how-do-i-make-a-pin-annotation-callout-in-swift
@@ -84,7 +102,10 @@ class PatronMapViewController: UIViewController {
             super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
 
             canShowCallout = true
-            rightCalloutAccessoryView = UIButton(type: .infoLight)
+            let rightButton = UIButton(type: .infoLight)
+            rightCalloutAccessoryView = rightButton
+            
+            //rightCalloutAccessoryView = UIButton(type: .infoLight)
         }
 
         required init?(coder aDecoder: NSCoder) {
@@ -93,7 +114,7 @@ class PatronMapViewController: UIViewController {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        performSegue(withIdentifier: "Ruben James Info", sender: view)
+        performSegue(withIdentifier: "RJView", sender: view)
     }
     
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -90,10 +90,29 @@
                 <viewController id="U1w-mo-exH" customClass="PatronMapViewController" customModule="CS275_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="ZTA-V4-0pv"/>
                     <navigationItem key="navigationItem" id="IWQ-qL-BXV"/>
+                    <connections>
+                        <segue destination="iFV-g1-9Pl" kind="show" identifier="RJView" id="hsi-hH-aBa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yg-3s-6QN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2784.057971014493" y="96.195652173913047"/>
+        </scene>
+        <!--RJ View-->
+        <scene sceneID="5qJ-lr-Rb9">
+            <objects>
+                <viewController id="iFV-g1-9Pl" userLabel="RJ View" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vm8-7W-iL3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4ac-LD-3iS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="miN-y2-PUe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hrf-VN-bn9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3613" y="105"/>
         </scene>
         <!--Manager Sign In View Controller-->
         <scene sceneID="SW0-1v-f4J">
