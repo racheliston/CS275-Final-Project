@@ -94,7 +94,9 @@
                                     <constraint firstAttribute="height" constant="55" id="wDA-KJ-dv8"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Create Account" buttonSize="medium"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Create Account" buttonSize="medium">
+                                    <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="B6F-k0-pJG" kind="show" id="x4J-vw-O83"/>
                                 </connections>
@@ -189,7 +191,9 @@
                                     <constraint firstAttribute="height" constant="60" id="vng-Cv-bnL"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                    <color key="baseBackgroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="createAccount:" destination="B6F-k0-pJG" eventType="touchUpInside" id="f3D-Eh-Drx"/>
                                 </connections>
@@ -285,7 +289,9 @@
                                     <constraint firstAttribute="height" constant="60" id="cD7-HI-5QT"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                    <color key="baseBackgroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="submitInformation:" destination="6am-me-qH8" eventType="touchUpInside" id="h6d-eV-raq"/>
                                 </connections>
@@ -459,6 +465,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="36"/>
+                                    <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="decrementLine:" destination="38l-2F-r8D" eventType="touchUpInside" id="QWU-rV-nka"/>
@@ -469,6 +476,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="36"/>
+                                    <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="incrementLine:" destination="38l-2F-r8D" eventType="touchUpInside" id="UXh-eW-gQu"/>
@@ -479,6 +487,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="36"/>
+                                    <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="decrementCap:" destination="38l-2F-r8D" eventType="touchUpInside" id="aUW-CB-FSt"/>
@@ -501,6 +510,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="36"/>
+                                    <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="incrementCap:" destination="38l-2F-r8D" eventType="touchUpInside" id="Gbd-lj-aPl"/>
@@ -586,6 +596,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Out">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="48"/>
+                                            <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="signOut:" destination="EhU-BB-87V" eventType="touchUpInside" id="j8d-Ea-WYt"/>
