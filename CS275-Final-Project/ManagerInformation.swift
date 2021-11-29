@@ -17,8 +17,6 @@ class ManagerInformationViewController: UIViewController {
     
     // Create an instance of ManagerCreateAccount
     var userName = ""
-    
-    lazy var geoLoc = CLGeocoder()
     var longitudeReturned = 0.0
     var latitudeReturned = 0.0
     
@@ -110,13 +108,25 @@ class ManagerInformationViewController: UIViewController {
         if empty {
             present(alertTextFieldsEmpty, animated: true, completion: nil)
         } else {
-            var address = "\(addressValue), \(cityValue), \(stateValue), \(zipCodeValue)"
+
+            let address = "\(addressValue), \(cityValue), \(stateValue), \(zipCodeValue)"
             
-            getCoordinate(addressString: address, completionHandler: completedValue)
+            // https://stackoverflow.com/questions/47244532/converting-a-city-name-to-coordinates-in-swift
+            getCoordinateFrom(address: address) { coordinate, error in
+                guard let coordinate = coordinate, error == nil else { return }
+                // don't forget to update the UI from the main thread
+                DispatchQueue.main.async {
+                    print(address, "Location:", coordinate)
+                    self.latitudeReturned = coordinate.latitude
+                    self.longitudeReturned = coordinate.longitude
+                    self.database.collection("managers").document("\(self.userName)").setData(["longitude" : "\(self.longitudeReturned)", "latitude" : "\(self.latitudeReturned)"], merge: true)
+                }
+
+            }
             
             let userName = self.userName
             // Store the information in the account that was created
-            database.collection("managers").document("\(userName)").setData([ "capacity" : "\(capValue)", "hours" : "\(hoursValue)", "longitude" : "\(self.longitudeReturned)", "latitude" : "\(self.latitudeReturned)", "currentCapacity" : "0", "currentLine" : "0"], merge: true)
+            database.collection("managers").document("\(userName)").setData([ "capacity" : "\(capValue)", "hours" : "\(hoursValue)", "currentCapacity" : "0", "currentLine" : "0"], merge: true)
             
             print("Data has been written to the database")
             
@@ -132,28 +142,8 @@ class ManagerInformationViewController: UIViewController {
         
     }
     
-    func getCoordinate( addressString : String,
-            completionHandler: @escaping(CLLocationCoordinate2D, NSError?) -> Void) {
-        let geocoder = CLGeocoder()
-
-        geocoder.geocodeAddressString(addressString) { (placemarks, error) in
-            if error == nil {
-                if let placemark = placemarks?[0] {
-                    let location = placemark.location!
-
-                    
-                    self.longitudeReturned = location.coordinate.longitude
-                    self.latitudeReturned = location.coordinate.latitude
-                    
-                    print("Got longitude/latitude values")
-                    completionHandler(location.coordinate, nil)
-
-                    return
-                }
-            }
-
-            completionHandler(kCLLocationCoordinate2DInvalid, error as NSError?)
-        }
+    func getCoordinateFrom(address: String, completion: @escaping(_ coordinate: CLLocationCoordinate2D?, _ error: Error?) -> () ) {
+        CLGeocoder().geocodeAddressString(address) { completion($0?.first?.location?.coordinate, $1) }
     }
     
     func completedValue(coordinates: CLLocationCoordinate2D, error : NSError?) -> Void {
