@@ -8,10 +8,14 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseCore
+import FirebaseFirestore
 
 class PatronMapViewController: UIViewController {
     
     var mapView: MKMapView!
+    var database: Firestore!
+    var barNames = [String]()
     
     //var mapView: MKMapView()
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
@@ -147,6 +151,28 @@ class PatronMapViewController: UIViewController {
         centerMapOnLocation(location: homeLocation)
 
         print("PatronMapViewController loaded its view.")
+        
+        database = Firestore.firestore()
+        
+        let docRef = database.collection("managers")
+        print(docRef)
+        
+        barNames.append("Bar Name")
+        
+        database.collection("managers").getDocuments() {
+            (QuerySnapshot, err) in
+            if let err = err {
+                print("error!!!!!!!!")
+                return
+            }
+            
+            for manager in QuerySnapshot!.documents {
+                //print("\(manager.documentID)")
+                //print("\(manager.documentID) \(manager.data())")
+                self.barNames.append(manager.documentID)
+                print(self.barNames)
+            }
+        }
     }
     
 }
