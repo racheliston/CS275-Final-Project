@@ -24,6 +24,8 @@ class ManagerCreateAccountViewController: UIViewController {
     
     var database: Firestore!
     
+    var listBars = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,6 +91,26 @@ class ManagerCreateAccountViewController: UIViewController {
 //            }
             // All the fields are filled, make sure the username is not in the database
             let docRef = database.collection("managers").document("\(self.user)")
+            
+            let colRef = database.collection("managers")
+            
+            
+            listBars.append("Bar Name")
+            
+            database.collection("managers").getDocuments() {
+                (QuerySnapshot, err) in
+                if let err = err {
+                    print("error!!!!!!!!")
+                    return
+                }
+
+                for manager in QuerySnapshot!.documents {
+                    //print("\(manager.documentID)")
+                    //print("\(manager.documentID) \(manager.data())")
+                    self.listBars.append(manager.documentID)
+                    //print(self.barNames)
+                }
+            }
 
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
@@ -114,6 +136,18 @@ class ManagerCreateAccountViewController: UIViewController {
 
                                 let managerInfo = self.storyboard?.instantiateViewController(withIdentifier: "ManagerInformationViewController") as! ManagerInformationViewController
                             
+                                managerInfo.userName = self.user
+                                
+                                let patronView = self.storyboard?.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
+                                
+                                //patronView.barNames = self.user
+                                self.listBars.append(self.user)
+                                
+                                patronView.barNames = self.listBars
+                                
+                                self.tabBarController?.present(patronView, animated: true, completion: nil)
+                                
+                                print("\(patronView.barNames)")
                                 
                                 self.navigationController?.pushViewController(managerInfo, animated: true)
                             }

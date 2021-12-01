@@ -155,7 +155,6 @@ class PatronMapViewController: UIViewController {
         database = Firestore.firestore()
         
         let docRef = database.collection("managers")
-        print(docRef)
         
         barNames.append("Bar Name")
         
@@ -165,12 +164,14 @@ class PatronMapViewController: UIViewController {
                 print("error!!!!!!!!")
                 return
             }
-            
+
             for manager in QuerySnapshot!.documents {
                 //print("\(manager.documentID)")
                 //print("\(manager.documentID) \(manager.data())")
                 self.barNames.append(manager.documentID)
-                print(self.barNames)
+                var listBars = self.tabBarController?.viewControllers![1] as! TableViewController
+                listBars.barNames = self.barNames
+                //print(self.barNames)
             }
         }
     }
