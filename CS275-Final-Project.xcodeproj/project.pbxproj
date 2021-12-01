@@ -69,6 +69,8 @@
 		B862951E2717758B00EA8906 /* CS275-Final-ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CS275-Final-ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86295222717758B00EA8906 /* CS275_Final_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS275_Final_ProjectUITests.swift; sourceTree = "<group>"; };
 		B86295242717758B00EA8906 /* CS275_Final_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS275_Final_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8C8B6E327555D7800E30432 /* Titillium-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Titillium-Regular.otf"; path = "../../../../../.Trash/Titillium-Regular.otf"; sourceTree = "<group>"; };
+		B8C8B6E427555D7800E30432 /* Titillium-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Titillium-Bold.otf"; path = "../../../../../.Trash/Titillium-Bold.otf"; sourceTree = "<group>"; };
 		B8E9E5FE271E05FD00AB3B32 /* PatronMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatronMap.swift; sourceTree = "<group>"; };
 		D8030850273C84CD00675C59 /* ManagerCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerCreateAccount.swift; sourceTree = "<group>"; };
 		D8030852273C923C00675C59 /* ManagerInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerInformation.swift; sourceTree = "<group>"; };
@@ -170,6 +172,8 @@
 				D8C34C32271E2361002D9B13 /* ManagerSettings.swift */,
 				D8C34C30271E05D6002D9B13 /* ManagerHome.swift */,
 				D81863BF271E017E00044769 /* ManagerSignIn.swift */,
+				B8C8B6E427555D7800E30432 /* Titillium-Bold.otf */,
+				B8C8B6E327555D7800E30432 /* Titillium-Regular.otf */,
 				B862950A2717758B00EA8906 /* Assets.xcassets */,
 				B862950C2717758B00EA8906 /* LaunchScreen.storyboard */,
 				B8E9E5FE271E05FD00AB3B32 /* PatronMap.swift */,

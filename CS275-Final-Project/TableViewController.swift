@@ -14,7 +14,9 @@ class TableViewController: UITableViewController {
     var database: Firestore!
     
     // list of all bars to be included in list
-    let barItems = ["Ruben James","Ales","Akes","Red Square"]
+    let barItems = ["Name", "Ruben James","Ales","Akes","Red Square"]
+    
+    var barNames = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +26,9 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        database = Firestore.firestore()
+                
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,6 +47,7 @@ class TableViewController: UITableViewController {
 
         // left text label that holds the bar name
         cell.textLabel?.text = barItems[indexPath.row]
+        
         
         // right text label that holds the line size
         cell.detailTextLabel?.text = barItems[indexPath.row]
