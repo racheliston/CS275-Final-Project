@@ -80,6 +80,41 @@ class ManagerHomeViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        // Call the database to get the information
+        let docRef = database.collection("managers").document("\(userName)")
+
+        var cap = 0
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                
+                let fields = dataDescription.split(separator: ",")
+                
+                print("\(fields)")
+                var found = String()
+                for i in fields {
+                    if i.contains("capacity") {
+                        found = String(i)
+                    }
+                }
+                var capVal = found.split(separator: " ")
+                capVal.dropLast()
+                print("\(capVal[1])")
+                cap = Int(capVal[1]) ?? 100
+                
+                // Get the value of the capacity for the manager
+                self.totalCapacityValue = cap
+                
+                self.capacityLabel.text = "0 / \(self.totalCapacityValue)"
+                print("\(cap)")
+                // Extract the found value
+                //print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }    }
+    
     // Increment capacity value if addition symbol is pressed
     @IBAction func incrementCap(_ sender: UIButton) {
         // Make sure capacity value is less than total capacity value
@@ -174,5 +209,10 @@ class ManagerHomeViewController: UIViewController {
         }
         
         lineLabel.text = String(lineValue)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let settingsVC = segue.destination as? ManagerSettingsViewController else { return }
+        settingsVC.userName = self.userName
     }
 }

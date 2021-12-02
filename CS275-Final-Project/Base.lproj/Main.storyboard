@@ -592,29 +592,38 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cVE-tj-2Lf">
                                 <rect key="frame" x="16" y="16" width="343" height="615"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Total Capacity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhj-aS-7o1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCN-Oq-jEE">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="154"/>
-                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="48"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akg-Eh-v14">
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Total Capacity">
+                                            <fontDescription key="titleFontDescription" name="Galvji" family="Galvji" pointSize="40"/>
+                                            <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="changeCap:" destination="EhU-BB-87V" eventType="touchUpInside" id="l0z-T6-Ujj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5O-jC-ven">
                                         <rect key="frame" x="0.0" y="154" width="343" height="153.5"/>
-                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="48"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jN-mS-7Ui">
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Hours">
+                                            <fontDescription key="titleFontDescription" name="Galvji" family="Galvji" pointSize="40"/>
+                                            <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glh-zt-Cup">
                                         <rect key="frame" x="0.0" y="307.5" width="343" height="154"/>
-                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="48"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Address">
+                                            <fontDescription key="titleFontDescription" name="Galvji" family="Galvji" pointSize="40"/>
+                                            <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czd-ZZ-xcU">
                                         <rect key="frame" x="0.0" y="461.5" width="343" height="153.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Out">
-                                            <fontDescription key="titleFontDescription" name="Galvji" family="Galvji" pointSize="48"/>
+                                            <fontDescription key="titleFontDescription" name="Galvji" family="Galvji" pointSize="40"/>
                                             <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -636,6 +645,7 @@
                     <navigationItem key="navigationItem" id="ze9-yf-29w"/>
                     <connections>
                         <outlet property="signOutButton" destination="Czd-ZZ-xcU" id="Dfq-x7-28g"/>
+                        <outlet property="totalCapButton" destination="kCN-Oq-jEE" id="0ue-Fm-NIk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvS-Zz-0Fj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
