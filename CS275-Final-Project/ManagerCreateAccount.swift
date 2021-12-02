@@ -25,6 +25,8 @@ class ManagerCreateAccountViewController: UIViewController {
     var database: Firestore!
     
     var listBars = [String]()
+    // holds capacity and line size
+    var listLineInfo = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
