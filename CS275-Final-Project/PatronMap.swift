@@ -16,6 +16,7 @@ class PatronMapViewController: UIViewController {
     var mapView: MKMapView!
     var database: Firestore!
     var barNames = [String]()
+    var barInfo = [Any]()
     
     //var mapView: MKMapView()
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
@@ -101,10 +102,10 @@ class PatronMapViewController: UIViewController {
     
     // Citation: https://stackoverflow.com/questions/33978455/how-do-i-make-a-pin-annotation-callout-in-swift
 
-    class CustomAnnotationView: MKPinAnnotationView {  // or nowadays, you might use MKMarkerAnnotationView
+    /*class CustomAnnotationView: MKPinAnnotationView {
         override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
             super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-
+            
             canShowCallout = true
             let rightButton = UIButton(type: .infoLight)
             rightCalloutAccessoryView = rightButton
@@ -115,10 +116,10 @@ class PatronMapViewController: UIViewController {
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
-    }
+    }*/
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        performSegue(withIdentifier: "RJView", sender: view)
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        self.performSegue(withIdentifier: "RJView", sender: nil)
     }
     
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -147,7 +148,7 @@ class PatronMapViewController: UIViewController {
         
         showBarLocations()
         mapView.showsUserLocation = true
-        mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        /*mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)*/
         centerMapOnLocation(location: homeLocation)
 
         print("PatronMapViewController loaded its view.")
@@ -169,8 +170,13 @@ class PatronMapViewController: UIViewController {
                 //print("\(manager.documentID)")
                 //print("\(manager.documentID) \(manager.data())")
                 self.barNames.append(manager.documentID)
+                // instance of TableViewController
                 var listBars = self.tabBarController?.viewControllers![1] as! TableViewController
                 listBars.barNames = self.barNames
+                
+                self.barInfo.append(manager.data())
+                listBars.barInfo = self.barInfo
+                
                 //print(self.barNames)
             }
         }
