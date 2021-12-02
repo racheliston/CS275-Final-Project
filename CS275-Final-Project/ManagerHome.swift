@@ -48,6 +48,9 @@ class ManagerHomeViewController: UIViewController {
         let docRef = database.collection("managers").document("\(userName)")
 
         var cap = 0
+        var line = 0
+        var currCap = 0
+        
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
@@ -60,14 +63,41 @@ class ManagerHomeViewController: UIViewController {
                         found = String(i)
                     }
                 }
+
+                var currCount = String()
+                for i in fields {
+                    if i.contains("currentCapacity") {
+                        currCount = String(i)
+                    }
+                }
+                
+                var lineCount = String()
+                for i in fields {
+                    if i.contains("currentLine") {
+                        lineCount = String(i)
+                    }
+                }
+                
+                var lineVal = lineCount.split(separator: " ")
+                lineVal.dropLast()
+                line = Int(lineVal[1]) ?? 0
+                self.lineValue = line
+                self.lineLabel.text = "\(self.lineValue)"
+                
+                
+                var currVal = currCount.split(separator: " ")
+                currVal.dropLast()
+                currCap = Int(currVal[1]) ?? 100
+                
                 var capVal = found.split(separator: " ")
                 capVal.dropLast()
                 cap = Int(capVal[1]) ?? 100
                 
                 // Get the value of the capacity for the manager
+                self.capacityValue = currCap
                 self.totalCapacityValue = cap
                 
-                self.capacityLabel.text = "0 / \(self.totalCapacityValue)"
+                self.capacityLabel.text = "\(self.capacityValue) / \(self.totalCapacityValue)"
                 print("\(cap)")
 
             } else {
