@@ -15,8 +15,6 @@ class ManagerCreateAccountViewController: UIViewController {
     var user = ""
     var password = ""
     var confirmPassword = ""
-
-    
     
     @IBOutlet var userName: UITextField!
     @IBOutlet var origPass: UITextField!
@@ -24,16 +22,16 @@ class ManagerCreateAccountViewController: UIViewController {
     
     var database: Firestore!
     
+    // holds just bar names
     var listBars = [String]()
-    // holds capacity and line size
-    var listLineInfo = [String]()
+    // holds info about bars
+    var listBarInfo = [Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         database = Firestore.firestore()
     }
-    
     
     @IBAction func createAccount(_ sender: Any) {
         
@@ -93,24 +91,21 @@ class ManagerCreateAccountViewController: UIViewController {
 //            }
             // All the fields are filled, make sure the username is not in the database
             let docRef = database.collection("managers").document("\(self.user)")
-            
-            let colRef = database.collection("managers")
-            
-            
+                        
             listBars.append("Bar Name")
             
             database.collection("managers").getDocuments() {
                 (QuerySnapshot, err) in
                 if let err = err {
-                    print("error!!!!!!!!")
+                    print("Error found. Nothing to add!")
                     return
                 }
 
                 for manager in QuerySnapshot!.documents {
-                    //print("\(manager.documentID)")
-                    //print("\(manager.documentID) \(manager.data())")
+                    // add to list of just bar names
                     self.listBars.append(manager.documentID)
-                    //print(self.barNames)
+                    // add to list of info about each bar (line size, capacity, etc.)
+                    self.listBarInfo.append(manager.data())
                 }
             }
 

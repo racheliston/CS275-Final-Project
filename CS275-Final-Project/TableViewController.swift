@@ -17,6 +17,7 @@ class TableViewController: UITableViewController {
     let barItems = ["Name", "Ruben James","Ales","Akes","Red Square"]
     
     var barNames = [String]()
+    var barInfo = [Any]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
