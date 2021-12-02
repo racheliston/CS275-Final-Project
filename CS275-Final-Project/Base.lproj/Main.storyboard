@@ -610,6 +610,9 @@
                                             <fontDescription key="titleFontDescription" name="Galvji" family="Galvji" pointSize="40"/>
                                             <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="changeHours:" destination="EhU-BB-87V" eventType="touchUpInside" id="hBd-4J-6FX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glh-zt-Cup">
                                         <rect key="frame" x="0.0" y="307.5" width="343" height="154"/>
@@ -618,6 +621,9 @@
                                             <fontDescription key="titleFontDescription" name="Galvji" family="Galvji" pointSize="40"/>
                                             <color key="baseForegroundColor" red="0.1843137255" green="0.25098039220000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="changeAddress:" destination="EhU-BB-87V" eventType="touchUpInside" id="3Xw-Ys-14A"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czd-ZZ-xcU">
                                         <rect key="frame" x="0.0" y="461.5" width="343" height="153.5"/>
@@ -644,6 +650,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ze9-yf-29w"/>
                     <connections>
+                        <outlet property="addressButton" destination="glh-zt-Cup" id="l49-d7-vTU"/>
+                        <outlet property="hoursButton" destination="b5O-jC-ven" id="0NQ-78-uSk"/>
                         <outlet property="signOutButton" destination="Czd-ZZ-xcU" id="Dfq-x7-28g"/>
                         <outlet property="totalCapButton" destination="kCN-Oq-jEE" id="0ue-Fm-NIk"/>
                     </connections>
