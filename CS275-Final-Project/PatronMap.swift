@@ -16,6 +16,7 @@ class PatronMapViewController: UIViewController {
     var mapView: MKMapView!
     var database: Firestore!
     var barNames = [String]()
+    var barInfo = [Any]()
     
     //var mapView: MKMapView()
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
@@ -169,8 +170,13 @@ class PatronMapViewController: UIViewController {
                 //print("\(manager.documentID)")
                 //print("\(manager.documentID) \(manager.data())")
                 self.barNames.append(manager.documentID)
+                // instance of TableViewController
                 var listBars = self.tabBarController?.viewControllers![1] as! TableViewController
                 listBars.barNames = self.barNames
+                
+                self.barInfo.append(manager.data())
+                listBars.barInfo = self.barInfo
+                
                 //print(self.barNames)
             }
         }
