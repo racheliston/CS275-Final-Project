@@ -41,7 +41,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return barItems.count
+        return barNames.count
     }
 
     
@@ -49,11 +49,11 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "barCell", for: indexPath)
 
         // left text label that holds the bar name
-        cell.textLabel?.text = barItems[indexPath.row]
+        cell.textLabel?.text = barNames[indexPath.row]
         
         
         // right text label that holds the line size
-        cell.detailTextLabel?.text = barItems[indexPath.row]
+        cell.detailTextLabel?.text = barInfo[indexPath.row] as? String
 
         return cell
     }
