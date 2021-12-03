@@ -18,7 +18,9 @@ class TableViewController: UITableViewController {
     
     var barNames = [String]()
     var barInfo = [Any]()
-
+    
+    //var stringBarInfo = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,9 +53,10 @@ class TableViewController: UITableViewController {
         // left text label that holds the bar name
         cell.textLabel?.text = barNames[indexPath.row]
         
-        
+        let stringBarInfo = barInfo.map{ $0 as! String }
+
         // right text label that holds the line size
-        cell.detailTextLabel?.text = barInfo[indexPath.row] as? String
+        cell.detailTextLabel?.text = stringBarInfo[indexPath.row]
 
         return cell
     }
