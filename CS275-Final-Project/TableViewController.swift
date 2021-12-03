@@ -25,7 +25,8 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
 
         
-        print(barNames)
+        print("\(barInfo)")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -52,6 +53,26 @@ class TableViewController: UITableViewController {
 
         // left text label that holds the bar name
         cell.textLabel?.text = barNames[indexPath.row]
+        
+        // Get the bar line size
+        let barData = barInfo[indexPath.row]
+        
+        // Split the data
+        print("\(barData)")
+        
+        //var capacity = 0
+        
+//        guard let capacity = barData["capacity"] as? [Any] else {
+//            return cell
+//        }
+        var tempCap = 0.0
+        if let cap = barData as? [String: Any] {
+            tempCap = (cap["capacity"] as! NSString).doubleValue
+        }
+        
+        let capacity = Int(tempCap)
+        
+        print("\(capacity)")
         
         let stringBarInfo = barInfo.map{ $0 as? String }
 

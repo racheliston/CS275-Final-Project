@@ -177,7 +177,7 @@ class PatronMapViewController: UIViewController {
                 
                 self.barInfo.append(manager.data())
                 listBars.barInfo = self.barInfo
-                print("\(manager.data())")
+                //print("\(manager.data())")
                 
                 //print(self.barNames)
             }
