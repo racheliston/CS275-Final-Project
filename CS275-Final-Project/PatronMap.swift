@@ -158,6 +158,7 @@ class PatronMapViewController: UIViewController {
         let docRef = database.collection("managers")
         
         barNames.append("Bar Name")
+        barInfo.append("Info")
         
         database.collection("managers").getDocuments() {
             (QuerySnapshot, err) in
@@ -176,6 +177,7 @@ class PatronMapViewController: UIViewController {
                 
                 self.barInfo.append(manager.data())
                 listBars.barInfo = self.barInfo
+                print("\(manager.data())")
                 
                 //print(self.barNames)
             }

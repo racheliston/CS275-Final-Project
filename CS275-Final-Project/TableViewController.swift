@@ -53,7 +53,7 @@ class TableViewController: UITableViewController {
         // left text label that holds the bar name
         cell.textLabel?.text = barNames[indexPath.row]
         
-        let stringBarInfo = barInfo.map{ $0 as! String }
+        let stringBarInfo = barInfo.map{ $0 as? String }
 
         // right text label that holds the line size
         cell.detailTextLabel?.text = stringBarInfo[indexPath.row]
