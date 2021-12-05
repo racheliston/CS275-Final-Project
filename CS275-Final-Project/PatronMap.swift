@@ -73,31 +73,21 @@ class PatronMapViewController: UIViewController {
     let homeLocation = CLLocation(latitude: 44.477690, longitude: -73.212450)
     
     func showBarLocations() {
-        let RJLocation = CLLocationCoordinate2D(latitude: 44.475790, longitude: -73.212870)
-        let AkesLocation = CLLocationCoordinate2D(latitude: 44.476720, longitude: -73.212390)
-        let RedSquareLocation = CLLocationCoordinate2D(latitude: 44.476560, longitude: -73.212350)
-        let AlesLocation = CLLocationCoordinate2D(latitude: 44.475460, longitude: -73.213820)
+        let coords = [CLLocationCoordinate2D(latitude: 44.475790, longitude: -73.212870), CLLocationCoordinate2D(latitude: 44.476720, longitude: -73.212390), CLLocationCoordinate2D(latitude: 44.476560, longitude: -73.212350), CLLocationCoordinate2D(latitude: 44.475460, longitude: -73.213820),
+            CLLocationCoordinate2D(latitude: 44.476200, longitude: -73.211670),
+            CLLocationCoordinate2D(latitude: 44.476980, longitude: -73.211990),
+            CLLocationCoordinate2D(latitude: 44.476880, longitude: -73.212790)]
         
-        // Add bars to map
-        let rubenJames = MKPointAnnotation()
-        rubenJames.coordinate = RJLocation
-        rubenJames.title = "RJ's"
-        mapView.addAnnotation(rubenJames)
+            let titles = ["Ruben James", "Akes", "Red Square", "What Ales You", "Club Metronome", "Archives", "Ri Ra's"]
         
-        let akes = MKPointAnnotation()
-        akes.coordinate = AkesLocation
-        akes.title = "Akes"
-        mapView.addAnnotation(akes)
+            for i in coords.indices {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = coords[i]
+                annotation.title = titles[i]
+                mapView.addAnnotation(annotation)
+            }
         
-        let redSquare = MKPointAnnotation()
-        redSquare.coordinate = RedSquareLocation
-        redSquare.title = "Red Square"
-        mapView.addAnnotation(redSquare)
-        
-        let ales = MKPointAnnotation()
-        ales.coordinate = AlesLocation
-        ales.title = "Ales"
-        mapView.addAnnotation(ales)
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
     // Citation: https://stackoverflow.com/questions/33978455/how-do-i-make-a-pin-annotation-callout-in-swift
@@ -118,10 +108,6 @@ class PatronMapViewController: UIViewController {
         }
     }*/
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        self.performSegue(withIdentifier: "RJView", sender: nil)
-    }
-    
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? RubenJamesInfo,
             let annotationView = sender as? MKPinAnnotationView {
@@ -139,20 +125,19 @@ class PatronMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Zoom to location on map
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
         
-        showBarLocations()
+        self.showBarLocations()
         mapView.showsUserLocation = true
         /*mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)*/
         centerMapOnLocation(location: homeLocation)
 
         print("PatronMapViewController loaded its view.")
-        
+        self.showBarLocations()
         database = Firestore.firestore()
         
         let docRef = database.collection("managers")
