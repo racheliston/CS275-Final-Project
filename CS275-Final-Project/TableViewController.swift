@@ -66,18 +66,27 @@ class TableViewController: UITableViewController {
 //            return cell
 //        }
         var tempCap = 0.0
+        var curCap = 0.0
         if let cap = barData as? [String: Any] {
             tempCap = (cap["capacity"] as! NSString).doubleValue
         }
         
-        let capacity = Int(tempCap)
+        if let cap2 = barData as? [String: Any] {
+            curCap = (cap2["currentCapacity"] as! NSString).doubleValue
+        }
+        
+        let capacity = String(tempCap)
+        let curCapacity = String(curCap)
+        
+        let totalCapacity = capacity + "/" + curCapacity
         
         print("\(capacity)")
         
-        let stringBarInfo = barInfo.map{ $0 as? String }
+        //let stringBarInfo = barInfo.map{ $0 as? String }
 
         // right text label that holds the line size
-        cell.detailTextLabel?.text = stringBarInfo[indexPath.row]
+        //cell.detailTextLabel?.text = stringBarInfo[indexPath.row]
+        cell.detailTextLabel?.text = totalCapacity
 
         return cell
     }
