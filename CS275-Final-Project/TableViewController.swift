@@ -78,7 +78,7 @@ class TableViewController: UITableViewController {
         let capacity = String(tempCap)
         let curCapacity = String(curCap)
         
-        let totalCapacity = capacity + "/" + curCapacity
+        let totalCapacity = curCapacity + "/" + capacity
         
         print("\(capacity)")
         
