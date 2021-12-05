@@ -65,20 +65,20 @@ class TableViewController: UITableViewController {
 //        guard let capacity = barData["capacity"] as? [Any] else {
 //            return cell
 //        }
-        var tempCap = 0.0
-        var curCap = 0.0
+        var tempCap = 0
+        var curCap = 0
         if let cap = barData as? [String: Any] {
-            tempCap = (cap["capacity"] as! NSString).doubleValue
+            tempCap = (cap["capacity"] as! NSString).integerValue
         }
         
         if let cap2 = barData as? [String: Any] {
-            curCap = (cap2["currentCapacity"] as! NSString).doubleValue
+            curCap = (cap2["currentCapacity"] as! NSString).integerValue
         }
         
         let capacity = String(tempCap)
         let curCapacity = String(curCap)
         
-        let totalCapacity = curCapacity + "/" + capacity
+        let totalCapacity = curCapacity + " / " + capacity
         
         print("\(capacity)")
         
